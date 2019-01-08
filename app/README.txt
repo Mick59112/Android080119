@@ -8,6 +8,7 @@ raccourcis android studio
 alt + insert (generate getter setter etc...)
 ctrl + 1 (proposion)
 ctrl + space (recherche class)
+ctrl + & affiche les suggestions
 
 Mettre en mode projet
 

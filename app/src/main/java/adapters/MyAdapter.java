@@ -19,9 +19,15 @@ public class MyAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
 
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    private int count = 0;
+
     @Override
     public int getCount() {
-        return 100;
+        return count;
     }
 
     @Override

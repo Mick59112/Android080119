@@ -18,14 +18,14 @@
         android:id="@+id/button"
         android:layout_width="101dp"
         android:layout_height="wrap_content"
-        android:text="Ok"
+        android:text="@android:string/ok"
         app:layout_constraintTop_toBottomOf="@id/editText" />
 
     <EditText
         android:id="@+id/main_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone number"
+        android:hint="@string/phone_number_hint"
         android:inputType="phone"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/main_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cell"
+        android:text="@string/call_button"
         app:layout_constraintTop_toBottomOf="@+id/main_phone" />
 
 </android.support.constraint.ConstraintLayout>
