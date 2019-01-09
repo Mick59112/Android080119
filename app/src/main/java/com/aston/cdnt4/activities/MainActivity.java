@@ -2,7 +2,6 @@ package com.aston.cdnt4.activities;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.aston.cdnt4.R;
+import com.orhanobut.hawk.Hawk;
+
+import common.Constants;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCall = findViewById(R.id.main_call);
         myButton.setOnClickListener(this);
         mCall.setOnClickListener(this);
-        SharedPreferences sp = getSharedPreferences("PREFS", MODE_PRIVATE);
-        myEditText.setText(sp.getString("firstName", ""));
+
+        myEditText.setText(Hawk.get(Constants.FIRST_NAME, ""));
     }
 
     @Override
@@ -44,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String content = myEditText.getText().toString();
 
             if (content.length() > 0) {
-                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                intent.putExtra("firstName", content);
+                Intent intent = new Intent(getApplicationContext(), com.aston.cdnt4.activities.cdnt4.activities.SecondActivity.class);
+                intent.putExtra(Constants.FIRST_NAME, content);
                 startActivity(intent);
             }
         } else if (v.getId() == mCall.getId()) {

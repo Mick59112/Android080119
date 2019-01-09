@@ -3,7 +3,6 @@ package com.aston.cdnt4.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -13,8 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aston.cdnt4.R;
+import com.orhanobut.hawk.Hawk;
 
 import adapters.MyAdapter;
+import common.Constants;
 
 public class SecondActivity extends Activity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
@@ -26,12 +27,9 @@ public class SecondActivity extends Activity implements AdapterView.OnItemClickL
         // recuepere l'id de monTextView
         TextView myTextView = findViewById(R.id.monTextView);
         Intent intent = getIntent();
-        String fromMainActivity = intent.getStringExtra("firstName");
+        String fromMainActivity = intent.getStringExtra(Constants.FIRST_NAME);
         myTextView.setText(getString(R.string.hello_name,fromMainActivity));
-        SharedPreferences sp = getSharedPreferences("PREFS", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("firstName", fromMainActivity);
-        editor.apply();
+        Hawk.put(Constants.FIRST_NAME, fromMainActivity);
 
         // recupere l'id de listview
         ListView listView = findViewById(R.id.second_listView);

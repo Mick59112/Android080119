@@ -4,5 +4,5 @@
     <string name="call_button">Appeller</string>
     <string name="populate">Remplir</string>
     <string name="list_empty_text">Liste vide</string>
-    <string name="hello_name">Bonjour %1$s</string>
+    <string name="hello_name">Bonjour %1$s \u2665</string>
 </resources>
