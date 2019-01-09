@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String content = myEditText.getText().toString();
 
             if (content.length() > 0) {
-                Intent intent = new Intent(getApplicationContext(), com.aston.cdnt4.activities.cdnt4.activities.SecondActivity.class);
+                Intent intent = new Intent(getApplicationContext(), com.aston.cdnt4.activities.SecondActivity.class);
                 intent.putExtra(Constants.FIRST_NAME, content);
                 startActivity(intent);
             }
